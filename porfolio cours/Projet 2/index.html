@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- title -->
+        <title>Facture</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- JavaScript-->
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <nav>
+            <img src="logo.jpg">
+<!--1-->
+            <div class="banner">
+                <h2>Nom de l'entreprise:<input class=bn type="text"></h2>  
+                <h3>Adresse Postale<input class=bn type="text"></h3> 
+                <h3>Détailes du contrat<input class=bn type="text"></h3> 
+            </div>
+<!--2-->
+            <div class="banner2">
+                <h2>Facture</h2>
+                <h3>Date:<input class=bn type="text"></h3>
+                <hr>
+                <h3>Numéro du facture :<input class=bn type="text"></h3>
+                <hr>
+            </div>
+        </nav>
+        <div class="condition">
+            <p>Conditions de paiement, par exemple dû dans <input class=bn type="text"> jours</p>
+        </div>
+
+            <!--3-->
+            <section>
+<div class="second">
+    <div class="destinataires">
+        <h2>Destinataire: </h2>
+        <hr>
+        <h3>Nom:<input class=en type="text"></h3>
+        <h3>Nom de la société:<input class=en type="text"></h3>
+        <h3>Adresse postale:<input class=en type="text"></h3>
+        <h3>Téléphone:<input class=en type="text"></h3>
+        <h3>E-mail:<input class=en type="text"></h3>
+    </div>
+<!--4-->
+    <div class="envoyer">
+        <h2>Envoyer à</h2>
+        <hr>
+        <h3>Nom:<input class=en type="text"></h3>
+        <h3>Nom de la société:<input class=en type="text"></h3>
+        <h3>Adresse postale:<input class=en type="text"></h3>
+        <h3>Téléphone:<input class=en type="text"></h3>
+        <h3>E-mail:<input class=en type="text"></h3>
+    </div>
+</div>
+</section>
+
+<!--5-->                  
+<table id="table_inv" border="1">
+            <tr class="DESC">
+                <th>DESCRIPTION</th>
+                <th>QUANTITÉ</th>
+                <th>PRIX UNITAIRE</th>
+                <th>TOTAL</th>
+            </tr>
+
+            <tr id="modeleLigne">
+                <td><input type="text" name="desc" class="input desc" value="DESC"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
+            </tr>
+            <tr id="modeleLigne">
+                <td><input type="text" name="desc" class="input desc" value="DESC"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
+            </tr>
+            <tr id="modeleLigne">
+                <td><input type="text" name="desc" class="input desc" value="DESC"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
+            </tr>
+            <tr id="lastLigne">
+                <td><input type="text" name="desc" class="input desc" value="DESC"></td>
+                <td><input type="text" name="qte" class="input qte" value="0"></td>
+                <td><input type="text" name="prix" class="input prix" value="0"></td>
+                <td><input type="text" name="total" class="totalLigne" readonly="readonly" value="0.00"></td>
+            </tr>
+        </table> 
+
+            <!--6-->
+<div class="third">
+    <h2> Remaques,   notes et instructions de paiement</h2> 
+
+            </div>
+<!--7-->
+
+
+
+            <div class="coutsde">
+                <p>SOUS-TOTAL</p> <input type="text" name="TOTAL" class="TOTAL" readonly value="0">
+                <p>REMISE</p><input type="text" name="REMISE" class="REMISE" value="0">
+                <p>SOUS-TOTAL MOINS LES REMISES</p><input type="text" name="TOTALREMISE" class="TOTALREMISE" value="0">
+                <p>TAUX D'IMPOSITION</p><input type="text" name="TAUX" class="TAUX" value="0">
+                <p>TAXE TOTAL</p><input type="text" name="TAXE" class="TAXE" value="0">
+                <p>EXPEDITO, MANUTENTION</p><input type="text" name="EXPEDITO" class="EXPEDITO" value="0">
+                <hr>
+                <p>SOLDE DU</p><input type="text" name="SOLDE" class="SOLDE" readonly="readonly" value="0">
+            </div>
+        
+        <div class="button">
+            <button onclick="calculate()">Calculer</button>
+            <button onclick="ajouterLigne()">Ajouter une ligne</button>
+            <button onclick="supprimerLigne()">Supprimer une ligne</button>
+            <button onclick="remplir()">Remplir automatiquement</button>
+            <button onclick="reinitialiser()">Annuler</button>
+        </div>
+    </body>
+</html>
