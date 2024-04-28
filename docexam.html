@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles de base et réinitialisations */
+        body, h1, button, iframe {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #444;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Section des documents */
+        .documents-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Styles pour chaque document */
+        .document h2 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Zone de prévisualisation pour les PDFs */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: none; /* Caché par défaut */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #444;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Documents de Projet</title>
+</head>
+<body>
+    <header>
+        <h1>Documents E4 et E5</h1>
+    </header>
+    <section class="documents-container">
+        <!-- Liens pour prévisualisation des PDFs -->
+        <div class="document">
+            <h2>Description de Situation - Projet 1</h2>
+            <button onclick="showPDF('Mutsuddy-descriptif de situation - 1 .pdf')">Prévisualiser le PDF</button>
+        </div>
+        <div class="document">
+            <h2>Description de Situation - Projet 2</h2>
+            <button onclick="showPDF('Mutsuddy-descriptif de situation - 2.pdf')">Prévisualiser le PDF</button>
+        </div>
+        <div class="document">
+            <h2>Tableau de Synthèse - Épreuve E4</h2>
+            <button onclick="showPDF('RITHIK MUTSUDDY-Tableau_de_synthèse_-_Epreuve_E4 (1).pdf')">Prévisualiser le PDF</button>
+        </div>
+    </section>
+    <!-- Zone de prévisualisation pour les PDFs -->
+    <iframe id="pdfViewer"></iframe>
+    <footer>
+        <p>© 2024 Mon Portfolio de Rithik Mutsuddy.</p>
+    </footer>
+    <script>
+        function showPDF(pdfPath) {
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = pdfPath;
+            viewer.style.display = 'block'; // Affiche l'iframe lors du clic
+        }
+    </script>
+</body>
+</html>

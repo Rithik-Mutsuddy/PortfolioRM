@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f5f1; /* Light green background */
+  color: #333; /* Dark text for readability */
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2 {
+  color: #2e7d32; /* Dark green color */
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+h2 {
+  border-bottom: 3px solid #2e7d32; /* Dark green underline */
+  padding-bottom: 6px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex; /* Flex container for the list items */
+  flex-wrap: wrap; /* Allows list items to wrap in multiple lines */
+  justify-content: space-around; /* Distributes space around items */
+}
+
+li {
+  background-color: #fff; /* White background for list items */
+  border: 1px solid #ccc; /* Adds a slight border */
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  border-left: 5px solid #2e7d32; /* Green left border for visual interest */
+  flex: 1 1 200px; /* Flex item settings, growing and with basis of 200px */
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+}
+
+p {
+  background-color: #fff; /* White background for paragraphs */
+  padding: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds depth with shadow */
+  margin-top: 20px;
+}

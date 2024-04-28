@@ -1,0 +1,111 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Titles */
+.titles {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* Main content area */
+.intro, .ProExp, .Competances {
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Flexbox container for side-by-side cards */
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing around each card */
+    gap: 20px; /* Space between cards */
+}
+
+/* Styles for each card within the container */
+.info-cards > div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    flex: 1 1 200px; /* Grows to fit space, but not smaller than 200px */
+}
+
+/* Styling for the main image to make it stand out */
+img.main-photo {
+    width: 200px; /* Adjust width as needed */
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Styling for logos */
+img.logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    display: inline-block; /* Align side by side if multiple */
+    margin: 5px;
+}
+
+/* Contact links */
+.contact a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+/* Title for sections */
+.titleH3 {
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Subtitles within sections */
+.Ctitle {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* List of skills and experiences */
+h3 {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Adjusting the intro section for a personal touch */
+.intro1 h1, .intro1 h2 {
+    margin: 10px 0;
+}
+
+/* Responsive design settings */
+@media (max-width: 768px) {
+    .titles {
+        font-size: 18px;
+    }
+
+    .titleH3, .Ctitle {
+        font-size: 16px;
+    }
+
+    img.main-photo {
+        max-width: 90%; /* Ensure it looks good on smaller screens */
+    }
+
+    .info-cards {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+}

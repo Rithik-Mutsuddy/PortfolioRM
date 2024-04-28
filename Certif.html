@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: left;
+        }
+        .header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .pdf-preview {
+            border: 1px solid #ddd;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            width: 150px;
+            cursor: pointer;
+        }
+        .pdf-preview:hover {
+            transform: scale(1.05);
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">&#8592; Retour à l'accueil</a>
+        <center><h1>Voici mes Certifications</h1></center>
+    </div>
+    <div class="content">
+        <img src="Certifs/RGPD Logo.png" alt="Aperçu du PDF 1" class="pdf-preview" data-pdf="Module 1.pdf">
+        <img src="Certifs/RGPD Logo.png" alt="Aperçu du PDF 1" class="pdf-preview" data-pdf="Module 2.pdf">
+        <img src="Certifs/RGPD Logo.png" alt="Aperçu du PDF 1" class="pdf-preview" data-pdf="Module 3.pdf">
+        <img src="Certifs/RGPD Logo.png" alt="Aperçu du PDF 1" class="pdf-preview" data-pdf="Module 4.pdf">
+        <img src="Certifs/RGPD Logo.png" alt="Aperçu du PDF 1" class="pdf-preview" data-pdf="Module 5.pdf">
+        <!-- Add more previews as needed -->
+    </div>
+    <iframe id="pdf-viewer" hidden></iframe>
+
+    <script>
+        document.querySelectorAll('.pdf-preview').forEach(item => {
+            item.addEventListener('click', function() {
+                const pdfPath = this.getAttribute('data-pdf');
+                const viewer = document.getElementById('pdf-viewer');
+                viewer.src = pdfPath;
+                viewer.hidden = false;
+            });
+        });
+    </script>
+</body>
+</html>

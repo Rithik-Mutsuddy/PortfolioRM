@@ -1,0 +1,83 @@
+/* Réinitialisation de certains styles par défaut pour assurer la cohérence */
+body, h1, p, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style général du corps de la page */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Conteneur pour les projets, disposé horizontalement */
+.projet-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+    gap: 20px;
+    justify-content: center; /* Centrer les cartes dans le conteneur */
+    margin-top: 20px;
+}
+
+/* Style des cartes de projets */
+.projet {
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px; /* Largeur fixe pour chaque carte */
+}
+
+.projet img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.projet h2 {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.projet p {
+    padding: 0 20px 20px;
+    text-align: justify;
+}
+
+/* Liens dans les projets */
+.projet a {
+    color: #007BFF;
+    display: block;
+    padding: 10px 20px;
+}
+
+/* Ajout de l'espace en bas pour ne pas que le footer cache le contenu */
+body {
+    margin-bottom: 60px;
+}

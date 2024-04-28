@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Factures avec Plusieurs Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input, button {
+            margin-top: 5px;
+        }
+        input[type="number"], input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Générateur de Factures avec Plusieurs Articles</h2>
+        <div id="itemsContainer"></div>
+        <button onclick="addItem()">Ajouter Article</button>
+        <label for="taxRate">Taux de TVA (%):</label>
+        <input type="number" id="taxRate" placeholder="Taux de TVA" step="0.01" value="20">
+        <button onclick="calculateTotal()">Calculer Facture</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        let itemsContainer = document.getElementById('itemsContainer');
+
+        function addItem() {
+            let div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `
+                <label>Nom/Code de référence:</label>
+                <input type="text" placeholder="Entrez le nom ou code">
+                <label>Quantité:</label>
+                <input type="number" placeholder="Quantité" min="1">
+                <label>Prix unitaire:</label>
+                <input type="number" placeholder="Prix unitaire" step="0.01">
+                <button class="btn-small" onclick="removeItem(this)">Supprimer</button>
+            `;
+            itemsContainer.appendChild(div);
+        }
+
+        function removeItem(button) {
+            button.parentNode.remove();
+        }
+
+        function calculateTotal() {
+            let taxRate = parseFloat(document.getElementById('taxRate').value);
+            let totalHT = 0;
+            let items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                let quantity = parseFloat(item.children[3].value);
+                let price = parseFloat(item.children[5].value);
+                totalHT += quantity * price;
+            });
+            let taxAmount = totalHT * (taxRate / 100);
+            let totalTTC = totalHT + taxAmount;
+            document.getElementById('result').innerHTML = 'Total HT: ' + totalHT.toFixed(2) + ' €' +
+                '<br>Total TVA (' + taxRate + '%): ' + taxAmount.toFixed(2) + ' €' +
+                '<br>Total TTC: ' + totalTTC.toFixed(2) + ' €';
+        }
+
+        // Ajouter initialement un article
+        addItem();
+    </script>
+</body>
+</html>
