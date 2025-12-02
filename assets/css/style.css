@@ -1,0 +1,87 @@
+:root{
+  --bg:#000000;
+  --dark-purple:#4B0082;
+  --alt-purple:#6A0DAD;
+  --neon:#00BFFF;
+  --neon-2:#1E90FF;
+  --glass-bg:rgba(255,255,255,0.03);
+  --glass-border:rgba(255,255,255,0.06);
+  --text:rgba(235,235,245,0.95);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(74,0,146,0.14), transparent),
+              radial-gradient(900px 500px at 90% 90%, rgba(0,191,255,0.08), transparent),
+              var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+canvas#nebula{position:fixed;inset:0;z-index:0;display:block}
+.overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(8,2,20,0.35),transparent);z-index:1;pointer-events:none}
+
+.site-header{position:sticky;top:0;z-index:6;padding:18px 28px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{color:var(--text);font-weight:700;text-decoration:none;font-size:18px}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:16px}
+.nav-links a{color:rgba(220,220,230,0.9);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .25s}
+.nav-links a:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,191,255,0.06);border:1px solid rgba(255,255,255,0.02)}
+
+.hero{min-height:88vh;display:grid;place-items:center;padding:60px 20px;position:relative;z-index:3}
+.hero-inner{width:min(1100px,94%);text-align:center;padding:36px;border-radius:16px;background:linear-gradient(135deg,rgba(106,13,173,0.10),rgba(11,0,44,0.18));box-shadow:0 8px 60px rgba(10,10,20,0.6);border:1px solid rgba(255,255,255,0.04)}
+.glass{backdrop-filter: blur(8px) saturate(120%);border:1px solid var(--glass-border);background:var(--glass-bg)}
+
+.name{font-family:'Playfair Display',serif;font-size:40px;margin:6px 0;color:linear-gradient(90deg,var(--neon),var(--alt-purple));}
+.subtitle{font-size:20px;color:rgba(220,220,230,0.9);margin:6px 0 16px;opacity:0.95}
+.objective{max-width:900px;margin:12px auto 20px;color:rgba(210,210,220,0.92);line-height:1.5}
+.ctas{display:flex;gap:14px;justify-content:center;margin-top:18px}
+.btn{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;display:inline-block;border:1px solid transparent;transition:transform .22s,box-shadow .22s}
+.btn.primary{background:linear-gradient(90deg,var(--neon),var(--neon-2));color:#021524;box-shadow:0 12px 40px rgba(0,191,255,0.12)}
+.btn.primary:hover{transform:translateY(-6px);box-shadow:0 22px 70px rgba(0,191,255,0.18)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.btn.ghost:hover{transform:scale(1.02)}
+
+.section{padding:72px 20px;z-index:3}
+.section.dark{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.container{max-width:1120px;margin:0 auto}
+.timeline{list-style:none;padding:0;margin:12px 0 0}
+.timeline li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);transition:transform .28s,box-shadow .28s}
+.card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 20px 60px rgba(74,0,146,0.12)}
+.card h3{margin:0 0 8px}
+.card .role{font-size:14px;color:rgba(200,200,210,0.9);margin-bottom:8px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.skill-panel{padding:18px;border-radius:12px}
+.skill-panel h3{margin-top:0}
+
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+.contact .disclaimer{font-size:13px;color:rgba(200,200,210,0.7);margin-top:12px}
+
+.site-footer{padding:28px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.02);backdrop-filter:blur(6px);z-index:3}
+
+@media (max-width:800px){
+  .name{font-size:28px}
+  .two-cols{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+
+/* subtle entrance animations */
+.hero-inner{opacity:0;transform:translateY(12px);animation:enter .9s ease-out .12s forwards}
+@keyframes enter{to{opacity:1;transform:none}}
+
+/* neon outline focus for accessibility */
+a:focus{outline:3px solid rgba(0,191,255,0.12);outline-offset:3px}
+
+/* reduce motion preference */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}

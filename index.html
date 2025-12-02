@@ -1,60 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Rithik</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio de Rithik Mutsuddy — Développeur web fullstack. Alternance recherchée Septembre 2025 - Septembre 2026.">
+  <meta name="theme-color" content="#000000">
+  <title>Rithik Mutsuddy — Développeur web fullstack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/favicon.ico">
 </head>
 <body>
+  <canvas id="nebula" aria-hidden="true"></canvas>
+  <div class="overlay"></div>
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="/">Rithik Mutsuddy</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-    
-    <div class="container">
-        <div class="logo">
-            <h1>Rithik Mutsuddy</h1>
+  <main>
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner glass">
+        <h1 id="hero-title" class="name"><span id="typed-name">Rithik Mutsuddy</span></h1>
+        <p class="subtitle" id="typed-role">Développeur web fullstack</p>
+        <p class="objective">Développeur web fullstack curieux, rigoureux et autonome. Je recherche une alternance dans le développement d’applications (web ou mobile) à partir de Septembre 2025 à Septembre 2026 dans le cadre de mon Bachelor CDA au CESI Nanterre.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#contact">Me contacter</a>
+          <a class="btn ghost" href="#experience">Voir mon parcours</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="htmlcss.html">HTML & CSS</a></li>
-                <li><a href="VrVeille.html">Veille Technologique</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="Certif.html">Certificats</a></li>
-                <li><a href="contacts.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section class="introduction">
-        <h2>Bienvenue sur mon portfolio</h2>
-        <p>Je suis Rithik Mutsuddy, un développeur passionné spécialisé en Solutions Logicielles et Applications Métiers (SLAM).</p>
-        <p>Je souhaite approfondir mes connaissances dans le domaine du développement web et logiciel.</p>
+      </div>
     </section>
-    
 
-
-    <section class="education">
+    <section id="about" class="section">
+      <div class="container">
         <h2>Formation</h2>
-        <p>BTS SIO avec une spécialisation en SLAM</p>
-        <p>Bac Pro SN option RISC</p>
-    </section>
-
-    <section class="skills">
-        <h2>Compétences & Expertises</h2>
-        <ul>
-            <li>Développement Web</li>
-            <li>Support Technique</li>
+        <ul class="timeline">
+          <li><strong>CESI Nanterre</strong> — Bachelor Concepteur Développeur d’Applications — 2024–2026 (en cours)</li>
+          <li><strong>Lycée Parc de Vilgénis</strong> — BTS SIO – SISR — 2021–2023</li>
+          <li><strong>Lycée Pierre-Mendès France</strong> — BAC PRO SN RISC (mention AB) — 2019–2022</li>
         </ul>
+      </div>
     </section>
-</main>
 
-<footer>
+    <section id="experience" class="section dark">
+      <div class="container">
+        <h2>Expérience Professionnelle</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Canon Fac-Similé IDF</h3>
+            <p class="role">Développeur Web & Support Informatique — Année 2025–2026 (Apprentissage en Bachelor CDA)</p>
+            <ul>
+              <li>Support informatique, intégration de solutions, développement et automatisation</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Bidyanondo Foundation</h3>
+            <p class="role">Décembre 2023 à Février 2024 (2 mois)</p>
+            <ul>
+              <li>Création de sites web personnalisés adaptés aux besoins des utilisateurs</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Dizayn</h3>
+            <p class="role">Mai à Juillet 2023 (6 semaines)</p>
+            <ul>
+              <li>Conception de sites web sur mesure avec échanges directs clients</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Magasin Mestore</h3>
+            <p class="role">Technicien informatique / Support — 2021, Bourges (5 semaines)</p>
+            <ul>
+              <li>Réparation, clonage, maintenance, dépannage</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>RCF en Berry (Radio)</h3>
+            <p class="role">2022 (4 semaines) & 2020 (3 semaines)</p>
+            <ul>
+              <li>Assistance utilisateurs, envoi de newsletters, gestion technique du son</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Compétences Techniques</h2>
+        <div class="grid">
+          <div class="skill-panel glass">
+            <h3>Développement</h3>
+            <p>HTML, CSS, PHP, SQL, SCSS, Python, JavaScript, Java, C#, XML, React JS, Next.js, React Native, Laravel, Symfony</p>
+          </div>
+          <div class="skill-panel glass">
+            <h3>Logiciels</h3>
+            <p>Visual Studio Code, Visual Studio 2022, IntelliJ, Sublime Text, Figma, EasyPHP, XAMPP, MySQL, Docker, Git, GitHub</p>
+          </div>
+          <div class="skill-panel glass">
+            <h3>Réseau & Cybersécurité</h3>
+            <p>Matériel, Virtualisation, VirtualBox, TCP/IP, Routage, Cisco, Stormshield, DHCP, DNS, Active Directory, Wireshark, Sensibilisation RGPD</p>
+          </div>
+          <div class="skill-panel glass">
+            <h3>Méthodologie & Infographie</h3>
+            <p>Gestion de projet, ITIL, UML, Merise, Gimp, Digas, Audacity, SweetHome 3D, Blender, Solidworks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="more" class="section dark">
+      <div class="container two-cols">
+        <div>
+          <h2>Langues</h2>
+          <ul>
+            <li>Anglais : Bilingue (certification Erasmus)</li>
+            <li>Français : C1</li>
+            <li>Bengali : Langue maternelle</li>
+            <li>Hindi : Parlé</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Qualités & Centres d’intérêt</h2>
+          <p>Curieux, adaptable, rigoureux, autonome, sens de l’organisation, esprit d’analyse</p>
+          <p>Musculation, natation, football, guitare, dessin, jeux vidéo (FPS/MMO/stratégie), lecture SF, anime & mangas</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Retrouvez mon code et mes projets sur <a href="https://github.com/Rithik-Mutsuddy" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p class="disclaimer">Tous les contenus sur ce site sont en français conformément aux consignes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
-        <p>© 2024 Rithik Mutsuddy </p>
+      <p>© 2025 Rithik Mutsuddy — Portfolio professionnel</p>
     </div>
-</footer>
+  </footer>
 
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
