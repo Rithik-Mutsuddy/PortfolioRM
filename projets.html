@@ -1,45 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="projet.css">
-    <title>Mon Projet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Projets — Portfolio de Rithik Mutsuddy">
+  <title>Projets — Rithik Mutsuddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Projets réalisées</h1>
-    </header>
-    <br>
-    <br>
-    <section class="projet-container">
-        <div class="projet">
-            <img src="projet pics/hiky.png" alt="Description du projet 1">
-            <a href="https://hikystore.com/"><h2>Projet Hiky store</h2></a>
-            <p>Utiliser un CMS pour dévélopper une site de vente pour la cliente.</p>
-        </div>
-        <div class="projet">
-            <img src="projet pics/bidyanondo.png" alt="Description du projet 2">
-            <h2>Projet Idea collection</h2>
-            <p>Collecte des idées pour mon entreprise pour le projet non profit.</p>
-        </div>
-        <div class="projet">
-            <img src="projet pics/facture.png" alt="Description du projet 3">
-            <a href="facture.html"><h2>Projet Facture</h2></a>
-            <p>générer les factures</p>
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html">Rithik Mutsuddy</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#experience">Expérience</a></li>
+        <li><a href="index.html#skills">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="certifs.html">Certifications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        </div>
-        <div class="projet">
-            <img src="projet pics/VVA.png" alt="Description du projet 3">
-            <h2>Projet VVA</h2>
-            <p>Village vacancier alpes. Projet penadnt mon cursus, cette appli web permets de modifer, ajouter et réserver les pluisieurs hébergements avec plusieurs types de comptes.</p>
+  <main class="section">
+    <div class="container">
+      <h1>Projets</h1>
+      <p>Voici un aperçu de mes projets et réalisations. Pour le code complet, consultez mon <a href="https://github.com/Rithik-Mutsuddy" target="_blank" rel="noopener">profil GitHub</a>.</p>
 
-            
-        </div>
-<H3><a href="docexam.html">Documents pour E4 et E5</a></H3>
-    </section>
-    <footer>
-        <p>© 2024 Mon Portfolio.</p>
-    </footer>
+      <div class="projects-grid">
+        <article class="project-card glass">
+          <h3>Portail Vitrine</h3>
+          <p>Site vitrine responsive réalisé en HTML/CSS/JS avec animations et accessibilité.</p>
+          <div class="meta">Stack : HTML, CSS, JavaScript</div>
+          <a class="btn ghost" href="https://github.com/Rithik-Mutsuddy" target="_blank" rel="noopener">Voir sur GitHub</a>
+        </article>
+
+        <article class="project-card glass">
+          <h3>Webapp CRUD</h3>
+          <p>Application fullstack avec authentification, gestion CRUD et connexion base de données.</p>
+          <div class="meta">Stack : PHP, MySQL, JavaScript</div>
+          <a class="btn ghost" href="https://github.com/Rithik-Mutsuddy" target="_blank" rel="noopener">Voir sur GitHub</a>
+        </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Rithik Mutsuddy — Portfolio professionnel</p>
+    </div>
+  </footer>
 </body>
 </html>
